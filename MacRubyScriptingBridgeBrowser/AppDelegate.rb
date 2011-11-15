@@ -7,12 +7,11 @@
 #
 
 class AppDelegate
-  attr_accessor :window, :outline, :documentation
+  attr_accessor :window, :outline, :documentation, :doc_view
   
   def applicationDidFinishLaunching(a_notification)
     @documentation = parse_objc_header
     @outline.dataSource = self
-    @outline.doubleAction = "preview:"
   end
 
   def outlineView(view, numberOfChildrenOfItem: item)
@@ -100,15 +99,41 @@ class AppDelegate
     doc.delete_if{|node| node.nil?}.sort{|a,b| item_sort_value(a) <=> item_sort_value(b)}.to_a
   end
   
-  def preview(sender)
-    if outline.selectedRow >= 0
-      puts "you clicked row: #{outline.selectedRow}"
+  def outlineViewSelectionDidChange(sender)
+    puts "selection changed"
+    item = outline.itemAtRow(outline.selectedRow)
+    parent = outline.parentForItem(item)
+    if parent
+      display_method_or_property(item, parent, outline.selectedRow)
+    else
+      display_class(item)
     end
   end
   
   def windowWillClose(sender); exit(1); end
   
   private
+  
+  def display_method_or_property(item, parent, idx)
+    klass = klass_for_item(parent)
+    if klass
+      # meth = name_for_method_or_prop(item, idx)
+      puts item.description
+      display_doc(klass[0] + "\n" + item.description)
+    end
+  end
+  
+  def display_class(item)
+    klass = klass_for_item(item)
+    display_doc(klass.inspect)
+  end
+  
+  def display_doc(text)
+    ts = doc_view.textStorage
+    range = NSMakeRange(0, ts.length) # To append: NSMakeRange(ts.length, 0)
+    ts.replaceCharactersInRange(range, withString:text)
+    doc_view.scrollRangeToVisible(range, 0)
+  end
   
   def name_for_method_or_prop(item, idx)
     doc = klass_for_item(item)
@@ -132,8 +157,7 @@ class AppDelegate
   end
   
   def item_sort_value(item)
-    val = item && item[0] ? item[0] : ""
-    val
+    item && item[0] ? item[0] : ""
   end
   
   def object_for_item(item, fallback=true)
