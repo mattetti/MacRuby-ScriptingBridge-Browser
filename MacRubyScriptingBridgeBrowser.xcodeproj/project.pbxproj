@@ -14,6 +14,7 @@
 		2B0E2D411471E524000EF78A /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B0E2D3F1471E524000EF78A /* MainMenu.xib */; };
 		2B0E2D441471E524000EF78A /* rb_main.rb in Resources */ = {isa = PBXBuildFile; fileRef = 2B0E2D431471E524000EF78A /* rb_main.rb */; };
 		2B0E2D461471E524000EF78A /* AppDelegate.rb in Resources */ = {isa = PBXBuildFile; fileRef = 2B0E2D451471E524000EF78A /* AppDelegate.rb */; };
+		2B0E2D501471F4CB000EF78A /* omni.h in Resources */ = {isa = PBXBuildFile; fileRef = 2B0E2D4F1471F395000EF78A /* omni.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,13 +31,14 @@
 		2B0E2D2A1471E524000EF78A /* MacRubyScriptingBridgeBrowser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacRubyScriptingBridgeBrowser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B0E2D2E1471E524000EF78A /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		2B0E2D301471E524000EF78A /* MacRuby.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MacRuby.framework; path = Library/Frameworks/MacRuby.framework; sourceTree = DEVELOPER_DIR; };
-		2B0E2D371471E524000EF78A /* MacRubyScriptingBridgeBrowser-Info.plist */ = {isa = PBXFileReference; path = "MacRubyScriptingBridgeBrowser-Info.plist"; sourceTree = "<group>"; };
+		2B0E2D371471E524000EF78A /* MacRubyScriptingBridgeBrowser-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MacRubyScriptingBridgeBrowser-Info.plist"; sourceTree = "<group>"; };
 		2B0E2D391471E524000EF78A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2B0E2D3B1471E524000EF78A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		2B0E2D3D1471E524000EF78A /* MacRubyScriptingBridgeBrowser-Prefix.pch */ = {isa = PBXFileReference; path = "MacRubyScriptingBridgeBrowser-Prefix.pch"; sourceTree = "<group>"; };
+		2B0E2D3D1471E524000EF78A /* MacRubyScriptingBridgeBrowser-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MacRubyScriptingBridgeBrowser-Prefix.pch"; sourceTree = "<group>"; };
 		2B0E2D401471E524000EF78A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		2B0E2D431471E524000EF78A /* rb_main.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = rb_main.rb; sourceTree = "<group>"; };
 		2B0E2D451471E524000EF78A /* AppDelegate.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = AppDelegate.rb; sourceTree = "<group>"; };
+		2B0E2D4F1471F395000EF78A /* omni.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = omni.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 		2B0E2D3E1471E524000EF78A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2B0E2D4F1471F395000EF78A /* omni.h */,
 				2B0E2D3F1471E524000EF78A /* MainMenu.xib */,
 			);
 			name = Resources;
@@ -186,6 +189,7 @@
 			files = (
 				2B0E2D3A1471E524000EF78A /* InfoPlist.strings in Resources */,
 				2B0E2D411471E524000EF78A /* MainMenu.xib in Resources */,
+				2B0E2D501471F4CB000EF78A /* omni.h in Resources */,
 				2B0E2D441471E524000EF78A /* rb_main.rb in Resources */,
 				2B0E2D461471E524000EF78A /* AppDelegate.rb in Resources */,
 			);
